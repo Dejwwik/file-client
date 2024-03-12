@@ -5,6 +5,8 @@ import argparse
 from rest_client.rest_client import rest_read, rest_stat
 from utils.utils import save_file, is_valid_url
 
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description="File Client CLI", prog="file-client")
     parser.add_argument("action", choices=["stat", "read"], help="Action to perform")
@@ -18,6 +20,7 @@ def parse_arguments():
 
 if __name__ == "__main__":
 
+
 #invalid url, need to validate URL
 
     args = parse_arguments()
@@ -27,7 +30,7 @@ if __name__ == "__main__":
     if args.backend == "grpc":
         raise Exception("Grpc method not implemented. Use rest method again. Do not forget to specify \"base-url\" parameter!")
     
-    elif args.backend == "rest":
+    elif args.backend == "rest":  #Theoretically there is the elif statement useless, because we have only two options, and first option is validated above.
 
         if args.action == "stat":
             result = rest_stat(args.uuid, args.base_url) #There only print
