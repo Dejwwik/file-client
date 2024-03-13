@@ -10,19 +10,21 @@ The File Client is a simple CLI application that retrieves and prints data from 
    cd file-client
    ```
 
-2. Before the first run, generate gRPC Python files:
+2. Install Python dependencies:
    ```bash
-   python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto
+   pip install -r requirements.txt
    ```
 
 3. Navigate into the file_client folder:
    ```bash
    cd file_client
    ```
+   Yes, two times, because inside git repo, there is folder named file_client
 
-4. Install Python dependencies:
+4. Before the first run, generate gRPC Python files:
+   Make sure you are in file_client folder!!!
    ```bash
-   pip install -r requirements.txt
+   python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto
    ```
 
 ## Usage
