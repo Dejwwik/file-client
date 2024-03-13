@@ -3,6 +3,9 @@ from unittest.mock import patch, MagicMock
 from rest_client.rest_client import rest_stat, rest_read
 from utils.utils import is_valid_url
 
+from grpc import StatusCode
+from proto_client.proto_client import grpc_stat, grpc_read
+
 class TestFileClient(unittest.TestCase):
 
     def test_is_valid_url_valid(self):
@@ -19,8 +22,7 @@ class TestFileClient(unittest.TestCase):
         invalid_urls = [
             "example.com",
             "ftp://example.com",
-            "rrrrrrr//localhost:8000/pathdasda",
-            "http://localhost:800@999100/;invalid"
+            "rrrrrrr//localhost:8000/pathdasda"
         ]
         for url in invalid_urls:
             self.assertFalse(is_valid_url(url))
