@@ -45,3 +45,6 @@ Requirements
 * Linux OS support.
 * Unit tests are required.
 * Only one of the protocols (REST/gRPC) is required. Implementing both is a bonus.
+
+
+python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto    
