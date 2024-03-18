@@ -25,8 +25,12 @@ The File Client is a simple CLI application that retrieves and prints data from 
    ```bash
    python3 -m unittest
    ```
+5. Change execute permissons to file-client
+   ```bash
+   chmod +x ./file-client.py
+   ```
 
-5. Before the first run, generate gRPC Python files:
+6. Before the first run, generate gRPC Python files:
    Make sure you are in file_client folder!!!
    ```bash
    python3 -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto
