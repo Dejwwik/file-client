@@ -21,10 +21,15 @@ The File Client is a simple CLI application that retrieves and prints data from 
    ```
    Yes, two times, because inside git repo, there is folder named file_client
 
-4. Before the first run, generate gRPC Python files:
+4. Run unittests
+   ```bash
+   python3 -m unittest
+   ```
+
+5. Before the first run, generate gRPC Python files:
    Make sure you are in file_client folder!!!
    ```bash
-   python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto
+   python3 -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. service_file.proto
    ```
 
 ## Usage
